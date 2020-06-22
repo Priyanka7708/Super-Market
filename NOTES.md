@@ -15,6 +15,9 @@ Now as soon as we get to the second item, we calculate the discount which will b
 
 4) Buy one kilo of products for half price
 - Currently this one doesn't handle multiple different products that makes >= 1  kilo as that would need more comlicated calculation on which price to consider.
-For e.g if the basket as 500 grams of carrots and 1 kg of potatoes, the discount will only appear for 1 kg of potatoes.
+Have currently implemented the way mentioned below :
+- For e.g if the basket as 500 grams of carrots and 1 kg of potatoes, the discount will only appear for 1 kg of potatoes.
 - Similarly if there is 500 grams of carrots and 500 grams of potatoes, no discount will be applied even though they together make 1 kg. 
-- If given more time possibly have thought on how can the price be distributed if the super market has in general discount scheme for all/any 1kg vegetables.
+
+TODO:
+If given more time possibly have thought on how can the price be distributed if the super market has in general discount scheme for all/any 1kg vegetables.
