@@ -11,7 +11,7 @@ public class BuyThreeItemsForThePriceOfTwo implements IDiscount
     public BigDecimal calculate( List<Item> items )
     {
         List<BigDecimal> priceList = new ArrayList<>();
-        BigDecimal total_discount = BigDecimal.ZERO;
+        BigDecimal totalDiscount = BigDecimal.ZERO;
         for ( Item item : items )
         {
             if ( isEligible( item ) )
@@ -23,10 +23,10 @@ public class BuyThreeItemsForThePriceOfTwo implements IDiscount
 
         for ( int i = 0; i < itemsSets; i++ )
         {
-            total_discount = total_discount.add( priceList.get( i ) );
+            totalDiscount = totalDiscount.add( priceList.get( i ) );
         }
 
-        return total_discount;
+        return totalDiscount;
     }
 
     private boolean isEligible( Item item )
