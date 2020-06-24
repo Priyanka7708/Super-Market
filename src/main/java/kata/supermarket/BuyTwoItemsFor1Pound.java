@@ -8,8 +8,8 @@ public class BuyTwoItemsFor1Pound implements IDiscount
     @Override
     public BigDecimal calculate( List<Item> items )
     {
-        BigDecimal total_discount = BigDecimal.ZERO;
-        BigDecimal sub_price = BigDecimal.ZERO;
+        BigDecimal totalDiscount = BigDecimal.ZERO;
+        BigDecimal subPrice = BigDecimal.ZERO;
         int itemCount = 0;
 
         for ( Item item : items )
@@ -17,18 +17,18 @@ public class BuyTwoItemsFor1Pound implements IDiscount
             if ( isEligible( item ) )
             {
                 itemCount++;
-                sub_price = sub_price.add(item.price());
+                subPrice = subPrice.add(item.price());
                 // if itemCount is even we are on 2nd item - apply discount
                 if (itemCount % 2 == 0)
                 {
-                    total_discount = total_discount.add( sub_price.subtract(BigDecimal.ONE) );
-                    sub_price = BigDecimal.ZERO;
+                    totalDiscount = totalDiscount.add( subPrice.subtract(BigDecimal.ONE) );
+                    subPrice = BigDecimal.ZERO;
                 }
             }
 
         }
 
-        return total_discount;
+        return totalDiscount;
     }
     private boolean isEligible( Item item )
     {
