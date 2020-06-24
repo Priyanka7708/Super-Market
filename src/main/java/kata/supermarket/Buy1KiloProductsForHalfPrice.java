@@ -14,9 +14,11 @@ public class Buy1KiloProductsForHalfPrice implements IDiscount
         {
             if ( isEligible( item ) )
             {
-                BigDecimal wholeKg = ((ItemByWeight)item).weightInKilos().setScale(0, RoundingMode.DOWN);
-                BigDecimal pricePerKg =  ((ItemByWeight)item).pricePerKilo();
-                totalSaving = totalSaving.add( pricePerKg.multiply(wholeKg).divide( BigDecimal.valueOf( 2 ) ) );
+                if (ItemByWeight.class.isInstance(item)) {
+                    BigDecimal wholeKg = ((ItemByWeight) item).weightInKilos().setScale(0, RoundingMode.DOWN);
+                    BigDecimal pricePerKg = ((ItemByWeight) item).pricePerKilo();
+                    totalSaving = totalSaving.add(pricePerKg.multiply(wholeKg).divide(BigDecimal.valueOf(2)));
+                }
             }
         }
 
