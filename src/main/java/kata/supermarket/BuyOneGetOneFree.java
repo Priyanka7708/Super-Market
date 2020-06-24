@@ -19,13 +19,13 @@ public class BuyOneGetOneFree implements IDiscount
         Collections.sort( priceList );
 
         int size = priceList.size();
-        BigDecimal total_discount = BigDecimal.ZERO;
+        BigDecimal totalDiscount = BigDecimal.ZERO;
         for ( int i = 0; i < size / 2; i++ )
         {
-            total_discount = total_discount.add( priceList.get( i ) );
+            totalDiscount = totalDiscount.add( priceList.get( i ) );
         }
 
-        return total_discount;
+        return totalDiscount;
     }
 
     private boolean isEligible( Item item )
